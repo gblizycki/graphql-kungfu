@@ -2,12 +2,9 @@
   "name": "graphql-kungfu",
   "version": "1.0.3",
   "description": "Easy setup powerful GraphQL Server on AWS Lambda",
-  "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
+  "main": "lib/index.js",
   "scripts": {
-    "postinstall": "tsc",
+    "prepublish": "tsc",
     "example": "tsc && cd ./example && yarn refresh"
   },
   "repository": {
