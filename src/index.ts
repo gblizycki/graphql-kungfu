@@ -36,6 +36,7 @@ interface LambdaOptions {
   formatError?: Function
   formatResponse?: Function
   debug?: boolean
+  tracing?: boolean 
 }
 
 interface LambdaProps {
@@ -152,7 +153,8 @@ export class GraphQLServerLambda {
             context: apolloContext,
             formatError: this.options.formatError,
             formatResponse: formatResponse(event),
-            debug: this.options.debug
+            debug: this.options.debug,
+            tracing: this.options.tracing
           },
           query: query,
           request: {
