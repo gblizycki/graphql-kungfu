@@ -1,4 +1,8 @@
-import { GraphQLSchema } from 'graphql';
+import { 
+  GraphQLSchema,
+  GraphQLError,
+  GraphQLFormattedError
+} from 'graphql';
 import {
   IResolvers,
   makeExecutableSchema
@@ -33,7 +37,7 @@ interface LambdaOptions {
   playgroundEndpoint?: string
   endpoint?: string
   deduplicator?: boolean
-  formatError?: Function
+  formatError?: (error: GraphQLError) => GraphQLFormattedError
   formatResponse?: Function
   debug?: boolean
   tracing?: boolean 
